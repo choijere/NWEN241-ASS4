@@ -1,0 +1,83 @@
+[TASK 1]
+CORE:
+1) A constructor in C++ is a member function which initializes an object of
+   a class or structure.
+
+2) An abstract class is a class with atleast one PURE virtual function member.
+   They cannot be instantiated.
+
+3) valid ways to CONSTRUCT a Foo object.
+(a) Foo f; 			INVALID
+(b) Foo f(); 			VALID
+(c) Foo f(1); 			VALID 
+(d) Foo f(Foo(1)); 		VALID 
+(e) Foo f = Foo; 		INVALID 
+(f) Foo f = Foo(i = 1); 	VALID 
+(g) Foo f{}; 			INVALID
+(h) Foo f{1}; 			‌VALID 
+(i) Foo f = {1}; 		VALID 
+(j) Foo f = {.i = 1};		VALID 
+
+4) 
+int i = 2; 
+char str[] = "foo"; 
+printf("str[%d] = %c\n", i, str[i]);
+
+int i = 2;
+char str[] = "foo";
+std::cout << "str[" << i << "] = " << str[i] << std::endl;
+
+5)
+class rational
+{
+  public:
+  rational(int n, int d) {numerator = n; denominator = d;}
+  float getFloat() {return numerator/denominator;}
+  
+  private:
+  int numerator;
+  int denominator;
+  
+};
+
+[TASK 2]
+1) Not all inline function requests are granted.
+   inline function requests that ARE granted are granted during compilation.
+   Macros are expanded during the preprocessor stage.
+
+2)
+a) All members of a structure or class are public by default 
+   [FALSE] All members of a class are private by default.
+
+b) Objects of a class do not share non-static members. every object has its own copy
+   [TRUE] Every object has their own copy of non-static members.
+
+c) A structure can not have constructors or member functions, unlike a class.
+   [FALSE] (IN C++ ONLY) The only difference between a class and a structure
+                         is that: a structure's members are public by default.
+
+d) cin, cout, clog, and cerr are all classes used for IO in C++.
+   [TRUE] They all either take input, or report an output.
+
+3) 
+using namespace foo; //allows ALL 'identifiers' to be accessable (answers (a)).
+using foo::increment; //allows only the function increment() to be visible.
+//pick one.
+
+[TASK 3]
+1)
+class Square : public foo::Rectangle {
+public:
+  inline virtual int height() const;
+  inline virtual int width() const;
+  inline virtual int area() const; 
+  inline square(int wh) {
+    width = wh;
+    height = wh;
+  }
+
+protected:
+  int height;
+  int width;
+};
+
